@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import TopBar from "./scenes/global/TopBar";
 import Welcome from "./scenes/welcome";
+import CompileForm from "./scenes/form";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <TopBar />
         <Routes>
           <Route path="/" element={<Welcome />} />
+          <Route path="/form" element={<CompileForm />} />
         </Routes>
       </main>
     </div>

@@ -18,11 +18,18 @@ function Welcome () {
         }}
       >
         <Box style={{ flex: 1, marginTop: 20, marginBottom: 20}}>
-          <Typography variant="h2" fontFamily="roboto" color="white">
+          <Typography fontSize={{ xs: 50, md: 70 }} fontFamily="roboto" color="white">
             Welcome
           </Typography>
         </Box>
-        <Button variant="contained" style={{ flex: 2 }}>Clicca qui</Button>
+        <Box style={{ flex: 2, marginBottom: 10 }}>
+          <Button
+            variant="contained"
+            href="/form"
+          >
+            Start
+          </Button>
+        </Box>
       </Box>
     </Container>
   )

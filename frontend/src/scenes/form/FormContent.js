@@ -50,7 +50,7 @@ function FormContent () {
       </Box>
       <Box style={styles.questionContainer}>
         <h3>Durata in mesi:</h3>
-        <input style={styles.question} type="number" placeholder="Immettere la durata.." {...register("MonthTime", {required: true, min: 0})} />
+        <input style={styles.question} type="number" placeholder="Inserire valore.." {...register("MonthTime", {required: true, min: 0})} />
       </Box>
       <Box style={styles.questionContainer}>
         <h3>Passato del credito:</h3>
@@ -80,7 +80,7 @@ function FormContent () {
       </Box>
       <Box style={styles.questionContainer}>
         <h3>Ammontare del credito richiesto:</h3>
-        <input style={styles.question} type="number" placeholder="Inserire importo.." {...register("CreditRequestAmount", {required: true, min: 0})} />
+        <input style={styles.question} type="number" placeholder="Inserire valore.." {...register("CreditRequestAmount", {required: true, min: 0})} />
       </Box>
       <Box style={styles.questionContainer}>
         <h3>Ammontare dei risparmi e/o azioni:</h3>
@@ -102,55 +102,98 @@ function FormContent () {
           <option value="Più di 7 anni">Più di 7 anni</option>
         </select>
       </Box>
-      <input type="number" placeholder="RateTax" {...register("RateTax", {required: true, max: 100, min: 0})} />
-      <select {...register("FamilyStatus", { required: true })}>
-        <option value="Maschio-divorziato">Maschio-divorziato</option>
-        <option value="Femmina-divorziata">Femmina-divorziata</option>
-        <option value="Maschio-single">Maschio-single</option>
-        <option value="Maschio-sposato">Maschio-sposato</option>
-        <option value="Donna-single">Donna-single</option>
-      </select>
-      <select {...register("OthersDebtors", { required: true })}>
-        <option value="Nessuno">Nessuno</option>
-        <option value="Co-applicante">Co-applicante</option>
-        <option value="Garante">Garante</option>
-      </select>
-      <input type="number" placeholder="DwellingTime" {...register("DwellingTime", {required: true, min: 0})} />
-      <select {...register("Property", { required: true })}>
-        <option value="Proprietario di casa/terreno">Proprietario di casa/terreno</option>
-        <option value="Proprietario di casa">Proprietario di casa</option>
-        <option value="Proprietario di risparmi a contratto con società edilizie/assicurazione sulla vita">Proprietario di risparmi a contratto con società edilizie/assicurazione sulla vita</option>
-        <option value="Nessuno">Nessuno</option>
-      </select>
-      <input type="number" placeholder="Years" {...register("Years", {required: true, min: 0})} />
-      <select {...register("OthersCreditAccount", { required: true })}>
-        <option value="In altre banche">In altre banche</option>
-        <option value="In negozi">In negozi</option>
-        <option value="Nessuno">Nessuno</option>
-      </select>
-      <select {...register("DwellingType", { required: true })}>
-        <option value="In affitto">In affitto</option>
-        <option value="Proprietario occupante">Proprietario occupante</option>
-        <option value="Libero">Libero</option>
-      </select>
-      <input type="number" placeholder="ExistentCreditHere" {...register("ExistentCreditHere", { min: 0})} />
-      <select {...register("WorkType", { required: true })}>
-        <option value="Disoccupato/non qualificato senza residenza permanente">Disoccupato/non qualificato senza residenza permanente</option>
-        <option value="Non qualificato con residenza permanente">Non qualificato con residenza permanente</option>
-        <option value="Lavoratore/impiegato qualificato/dipendente pubbblico minore">Lavoratore/impiegato qualificato/dipendente pubbblico minore</option>
-        <option value="Esecutivo/dirigente">Esecutivo/dirigente</option>
-        <option value="Alto funzionario statale">Alto funzionario statale</option>
-      </select>
-      <input type="number" placeholder="MaintenanceRightNumber" {...register("MaintenanceRightNumber", {required: true, min: 0})} />
-      <select {...register("Cellphone", { required: true })}>
-        <option value="Si">Si</option>
-        <option value="No">No</option>
-      </select>
-      <select {...register("ForeignerWorker", { required: true })}>
-        <option value="Si">Si</option>
-        <option value="No">No</option>
-      </select>
-      <input type="submit" />
+      <Box style={styles.questionContainer}>
+        <h3>Tasso di rata in percentuale:</h3>
+        <input style={styles.question} type="number" placeholder="Inserire percentuale.." {...register("RateTax", {required: true, max: 100, min: 0})} />
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Sesso e stato di famiglia:</h3>
+        <select style={styles.question} {...register("FamilyStatus", { required: true })}>
+          <option value="Maschio-divorziato">Maschio-divorziato</option>
+          <option value="Femmina-divorziata">Femmina-divorziata</option>
+          <option value="Maschio-single">Maschio-single</option>
+          <option value="Maschio-sposato">Maschio-sposato</option>
+          <option value="Donna-single">Donna-single</option>
+        </select>
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Altri debitori garantiti:</h3>
+        <select style={styles.question} {...register("OthersDebtors", { required: true })}>
+          <option value="Nessuno">Nessuno</option>
+          <option value="Co-applicante">Co-applicante</option>
+          <option value="Garante">Garante</option>
+        </select>
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Tempo di abitazione (all'abitazione corrente):</h3>
+        <input style={styles.question} type="number" placeholder="Inserire valore.." {...register("DwellingTime", {required: true, min: 0})} />
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Proprietà:</h3>
+        <select style={styles.question} {...register("Property", { required: true })}>
+          <option value="Proprietario di casa/terreno">Proprietario di casa/terreno</option>
+          <option value="Proprietario di casa">Proprietario di casa</option>
+          <option value="Proprietario di risparmi a contratto con società edilizie/assicurazione sulla vita">Proprietario di risparmi a contratto con società edilizie/assicurazione sulla vita</option>
+          <option value="Nessuno">Nessuno</option>
+        </select>
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Anni:</h3>
+        <input style={styles.question} type="number" placeholder="Inserire valore.." {...register("Years", {required: true, min: 0})} />
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Altri crediti correnti:</h3>
+        <select style={styles.question} {...register("OthersCreditAccount", { required: true })}>
+          <option value="In altre banche">In altre banche</option>
+          <option value="In negozi">In negozi</option>
+          <option value="Nessuno">Nessuno</option>
+        </select>
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Tipo di abitazione:</h3>
+        <select style={styles.question} {...register("DwellingType", { required: true })}>
+          <option value="In affitto">In affitto</option>
+          <option value="Proprietario occupante">Proprietario occupante</option>
+          <option value="Libero">Libero</option>
+        </select>
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Numero di crediti esistenti in questa banca:</h3>
+        <input style={styles.question} type="number" placeholder="Inserire valore.." {...register("ExistentCreditHere", { min: 0})} />
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Lavoro:</h3>
+        <select style={styles.question} {...register("WorkType", { required: true })}>
+          <option value="Disoccupato/non qualificato senza residenza permanente">Disoccupato/non qualificato senza residenza permanente</option>
+          <option value="Non qualificato con residenza permanente">Non qualificato con residenza permanente</option>
+          <option value="Lavoratore/impiegato qualificato/dipendente pubbblico minore">Lavoratore/impiegato qualificato/dipendente pubbblico minore</option>
+          <option value="Esecutivo/dirigente">Esecutivo/dirigente</option>
+          <option value="Alto funzionario statale">Alto funzionario statale</option>
+        </select>
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Numero di persone aventi diritto al mantenimento:</h3>
+        <input style={styles.question} type="number" placeholder="Inserire valore.." {...register("MaintenanceRightNumber", {required: true, min: 0})} />
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Telefono:</h3>
+        <select style={styles.question} {...register("Cellphone", { required: true })}>
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>
+      </Box>
+      <Box style={styles.questionContainer}>
+        <h3>Lavoratore Straniero:</h3>
+        <select style={styles.question} {...register("ForeignerWorker", { required: true })}>
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+        </select>
+      </Box>
+      <input type="submit" style={{
+        backgroundColor: '#91ff89',
+        padding: 10,
+        borderRadius: 5,
+      }}/>
     </form>
   );
 }

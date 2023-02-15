@@ -2,9 +2,27 @@ import { Routes, Route } from "react-router-dom";
 import TopBar from "./scenes/global/TopBar";
 import Welcome from "./scenes/welcome";
 import CompileForm from "./scenes/form";
+import {createTheme, ThemeProvider} from "@mui/material";
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        light: '#6fbf73',
+        main: '#4caf50',
+        dark: '#357a38',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#ff7961',
+        main: '#f44336',
+        dark: '#ba000d',
+        contrastText: '#000',
+      },
+    },
+  });
   return (
+    <ThemeProvider theme={theme}>
     <div className="app">
       <main className="content">
         <TopBar />
@@ -14,6 +32,7 @@ function App() {
         </Routes>
       </main>
     </div>
+    </ThemeProvider>
   );
 }
 

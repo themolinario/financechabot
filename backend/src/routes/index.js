@@ -2,7 +2,7 @@ const chatbot = require('../chatbot/index.js');
 
 module.exports = app => {
   app.get('/', (req, res) => {
-    res.send({'hello': 'bro'})
+    res.send({'hello': 'hi'})
   });
 
   app.post('/api/df_text_query', async (req, res) => {

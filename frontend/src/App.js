@@ -3,6 +3,7 @@ import TopBar from "./scenes/global/TopBar";
 import Welcome from "./scenes/welcome";
 import CompileForm from "./scenes/form";
 import {createTheme, ThemeProvider} from "@mui/material";
+import ChatBot from "./scenes/chatbot/ChatBot";
 
 function App() {
   const theme = createTheme({
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/form" element={<CompileForm />} />
+          <Route path="/chatbot" element={<ChatBot />} />
         </Routes>
       </main>
     </div>

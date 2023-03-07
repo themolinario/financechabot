@@ -1,4 +1,6 @@
 const chatbot = require('../chatbot/index.js');
+const answers = require('../form/index');
+const {query} = require("express");
 
 module.exports = app => {
   app.get('/', (req, res) => {
@@ -15,5 +17,11 @@ module.exports = app => {
     let responses = await chatbot.eventQuery(req.body.event, req.body.userID, req.body.parameters);
 
     res.send(responses[0].queryResult)
+  });
+
+  app.post('/api/answers', async (req, res) => {
+    let responses = await answers.saveAnswers(req.body.data);
+
+    res.send(responses)
   });
 };

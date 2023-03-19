@@ -98,7 +98,9 @@ function ChatBot () {
        <Box>
          <h2>Chatbot</h2>
        </Box>
-       {renderMessages(messages)}
+       <Box style={{backgroundColor: 'black', width: '100%', paddingTop: 4}}>
+         {renderMessages(messages)}
+       </Box>
        <div
          ref={(el) => {
            messagesEnd = el;}}
@@ -110,7 +112,7 @@ function ChatBot () {
            label="Scrivi un messaggio.."
            variant="standard"
            onKeyPress={handleInputKeyPress}
-           style={{ margin: 24, backgroundColor: 'white', padding: 2, borderRadius: 2}}
+           style={{ margin: 24, backgroundColor: 'white', padding: 2, borderRadius: 2, width: '100%'}}
          />
        </div>
      </Box>

@@ -11,15 +11,16 @@ function Welcome () {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          marginTop: 5,
+          marginTop: 3,
           width: "100%",
           height: "100%",
           backgroundColor: 'primary.dark',
+          borderRadius: 8,
         }}
       >
         <Box style={{ flex: 1, marginTop: 20, marginBottom: 20}}>
           <Typography fontSize={{ xs: 50, md: 70 }} fontFamily="roboto" color="white">
-            Welcome
+            Benvenuto
           </Typography>
         </Box>
         <Box style={{ flex: 2, marginBottom: 10 }}>
@@ -27,7 +28,7 @@ function Welcome () {
             variant="contained"
             href="/form"
           >
-            Start
+            Iniziamo
           </Button>
         </Box>
       </Box>

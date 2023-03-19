@@ -215,9 +215,14 @@ function FormContent () {
         </select>
       </Box>
       <input type="submit" style={{
-        backgroundColor: '#91ff89',
-        padding: 10,
-        borderRadius: 5,
+        backgroundColor: '#04AA6D',
+        border: 'none',
+        color: 'white',
+        padding: '16px 32px',
+        textDecoration: 'none',
+        margin: '4px 2px',
+        cursor: 'pointer',
+        borderRadius: 8,
       }}/>
       {posted && (<Navigate to="/chatbot" replace={true}/>)}
     </form>

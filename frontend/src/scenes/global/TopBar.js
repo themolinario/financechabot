@@ -2,7 +2,7 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import AdbIcon from '@mui/icons-material/Adb';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import Box from "@mui/material/Box";
 
 
@@ -19,7 +19,7 @@ function TopBar() {
             justifyContent: 'center',
             height: 50
         }}>
-          <AdbIcon sx={{ display: 'flex',  mr: 1 }} />
+          <AccountBalanceIcon sx={{ display: 'flex',  mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
